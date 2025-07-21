@@ -15,6 +15,9 @@
     "check-types": "tsc --noEmit --project tsconfig.json"
   },
   "keywords": [],
+   "publishConfig": {
+    "access": "public"
+  },
   "author": "Proxity Studios",
   "license": "MIT",
   "devDependencies": {
