@@ -1,6 +1,6 @@
 {
   "name": "@repick/common",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "",
   "exports": "./dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,7 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "latest",
-  	"@repick/typescript-config": "workspace:*"
+    "@repick/typescript-config": "workspace:*"
   },
   "dependencies": {}
 }
