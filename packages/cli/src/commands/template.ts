@@ -1,10 +1,10 @@
 import { Args, Command, Flags as OCFlags, ux } from "@oclif/core";
-import { repick } from "../container";
+import { velkit } from "../container";
 import {
   Flags,
   CLIBaseCommand,
 } from "../structures/CLIBaseCommand";
-import { Builder } from "@repick/core";
+import { Builder } from "@velkit/core";
 import { getTemplateIfExistsOrThrow } from "../utils";
 
 // TODO: Check existing version of templates.json and update if its outdated.
@@ -41,7 +41,7 @@ export default class Template extends CLIBaseCommand<typeof Template> {
       if (flags.proxy) builder.setProxy(flags.proxy);
 
       ux.action.start("Cloning", "Still in progress", { style: "aesthetic" });
-      await repick.clone(builder);
+      await velkit.clone(builder);
       ux.action.stop();
     } catch (error) {
       this.error(`Template not found: ${args.template}`, {

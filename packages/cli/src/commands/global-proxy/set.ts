@@ -1,5 +1,5 @@
 import { Args, Command, Flags as OCFlags } from '@oclif/core';
-import { repick } from '../../container';
+import { velkit } from '../../container';
 import { Flags, CLIBaseCommand } from '../../structures/CLIBaseCommand';
 
 export default class GlobalProxyClear extends CLIBaseCommand<typeof GlobalProxyClear> {
@@ -21,7 +21,7 @@ export default class GlobalProxyClear extends CLIBaseCommand<typeof GlobalProxyC
 
     // TODO: Validate the proxy format if necessary
 
-    repick.setGlobalProxy(args.proxy);
+    velkit.setGlobalProxy(args.proxy);
     this.log('Global proxy set to flags:', args.proxy);
 
     return this.flags;

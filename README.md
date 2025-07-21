@@ -1,10 +1,10 @@
-# Repick
+# Velkit
 
-Repick is a CLI tool that lets you clone repositories faster and comes with some additinional features such as E.P.A
+Velkit is a CLI tool that lets you clone repositories faster and comes with some additinional features such as E.P.A
 
 ## Usage
 
-You can use Repick in two ways: with a single-line command or with a graphical user interface (GUI).
+You can use Velkit in two ways: with a single-line command or with a graphical user interface (GUI).
 
 | Global Flag      | Description                |
 | ---------------- | -------------------------- |
@@ -16,13 +16,13 @@ You can use Repick in two ways: with a single-line command or with a graphical u
 To clone a repository with a single-line command, use the following syntax:
 
 ```bash
-npx repick@latest clone <SOURCE> <DESTINATION> [FLAGS]
+npx velkit@latest clone <SOURCE> <DESTINATION> [FLAGS]
 ```
 
 For example, to clone `typescript-starter` repository from `ProxityStudios` into a directory named `myapp`, run:
 
 ```bash
-npx repick@latest clone ProxityStudios/typescript-starter myapp
+npx velkit@latest clone ProxityStudios/typescript-starter myapp
 ```
 
 **<>** Required | **[]** Optional
@@ -36,19 +36,19 @@ npx repick@latest clone ProxityStudios/typescript-starter myapp
 TODO:
 
 ```bash
-npx repick@latest gui
+npx velkit@latest gui
 ```
 
 ### [BETA] Init E.P.A and automatically configure it
 
-E.P.A stands for **E**SLint, **P**rettier, and **A**irbnb. These are popular tools for code formatting and quality. Repick can install and configure them for you with a single command. Yeah, it's that simple.
+E.P.A stands for **E**SLint, **P**rettier, and **A**irbnb. These are popular tools for code formatting and quality. Velkit can install and configure them for you with a single command. Yeah, it's that simple.
 
 #### TypeScript
 
 If you're using TypeScript, you need to provide the `--ts` flag:
 
 ```bash
-npx repick@latest init-epa <path/to/install> --ts
+npx velkit@latest init-epa <path/to/install> --ts
 ```
 
 #### JavaScript
@@ -56,7 +56,7 @@ npx repick@latest init-epa <path/to/install> --ts
 If you're using JavaScript, you don't need to do anything extra, just omit the `--ts` flag.
 
 ```bash
-npx repick@latest init-epa <path/to/install>
+npx velkit@latest init-epa <path/to/install>
 ```
 
 | Flag                   | Description    |
@@ -65,4 +65,4 @@ npx repick@latest init-epa <path/to/install>
 
 # Support and Feedback
 
-If you have any questions, issues, or feedback related to Repick, create an issue through Github Issues!
+If you have any questions, issues, or feedback related to Velkit, create an issue through Github Issues!

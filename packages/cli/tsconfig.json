@@ -2,7 +2,7 @@
 	"ts-node": {
 		"transpileOnly": true,
 	},
-  	"extends": "@repick/typescript-config/base.json",
+  	"extends": "@velkit/typescript-config/base.json",
 	"compilerOptions": {
 		"skipLibCheck": true,
 		"target": "ES2022",

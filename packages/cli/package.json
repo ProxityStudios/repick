@@ -1,18 +1,18 @@
 {
-  "name": "repick",
-  "description": "Repick is a CLI tool that lets you to clone repositories faster and comes with additinional features.",
+  "name": "velkit",
+  "description": "Velkit is a CLI tool that lets you to clone repositories faster and comes with additinional features.",
   "version": "0.0.0",
   "author": "Proxity Studios",
   "license": "MIT",
-  "homepage": "https://github.com/ProxityStudios/repick/blob/main/README.md",
+  "homepage": "https://github.com/ProxityStudios/velkit/blob/main/README.md",
   "engines": {
     "node": ">=18.0.0"
   },
   "bugs": {
-    "url": "https://github.com/ProxityStudios/repick/issues"
+    "url": "https://github.com/ProxityStudios/velkit/issues"
   },
   "keywords": [
-    "repick",
+    "velkit",
     "template",
     "templates",
     "cli",
@@ -20,7 +20,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ProxityStudios/repick.git"
+    "url": "git+https://github.com/ProxityStudios/velkit.git"
   },
   "files": [
     "/bin",
@@ -35,12 +35,12 @@
     "postinstall": "node ./scripts/postinstall.js"
   },
   "bin": {
-    "repick": "bin/run.js"
+    "velkit": "bin/run.js"
   },
   "oclif": {
-    "bin": "repick",
+    "bin": "velkit",
     "commands": "./src/commands",
-    "dirname": "repick",
+    "dirname": "velkit",
     "plugins": [
       "@oclif/plugin-help",
       "@oclif/plugin-warn-if-update-available",
@@ -59,7 +59,7 @@
   },
   "devDependencies": {
     "@types/node": "24.0.7",
-  	"@repick/typescript-config": "workspace:*",
+  	"@velkit/typescript-config": "workspace:*",
     "ts-node": "^10.9.2",
     "typescript": "5.5.4"
   },
@@ -67,8 +67,8 @@
     "@inquirer/prompts": "7.5.3",
     "@oclif/core": "4.4.0",
     "@oclif/plugin-help": "6.2.31",
-    "@repick/core": "workspace:*",
-    "@repick/common": "workspace:*",
+    "@velkit/core": "workspace:*",
+    "@velkit/common": "workspace:*",
     "@oclif/plugin-not-found": "3.2.59",
     "@oclif/plugin-warn-if-update-available": "3.1.44",
     "https-proxy-agent": "7.0.6",

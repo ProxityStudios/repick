@@ -1,4 +1,4 @@
-export class RepickError extends Error {
+export class VelkitError extends Error {
   public readonly code: string;
 
   public readonly status: number;
@@ -8,7 +8,7 @@ export class RepickError extends Error {
     this.code = code;
     this.status = status;
 
-    Object.setPrototypeOf(this, RepickError.prototype);
+    Object.setPrototypeOf(this, VelkitError.prototype);
   }
 
   toJSON() {
@@ -23,4 +23,4 @@ export class RepickError extends Error {
     return `[${this.code}] (${this.status}): ${this.message}`;
   }
 }
-export default RepickError
+export default VelkitError

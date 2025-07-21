@@ -1,5 +1,5 @@
 {
-  "extends": "@repick/typescript-config/base.json",
+  "extends": "@velkit/typescript-config/base.json",
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src",

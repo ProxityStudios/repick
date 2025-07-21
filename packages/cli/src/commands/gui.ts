@@ -1,9 +1,9 @@
 import { Args, Command, Flags as OCFlags, ux } from '@oclif/core';
 import { input, select } from '@inquirer/prompts';
-import { repick } from '../container';
+import { velkit } from '../container';
 import { Flags, CLIBaseCommand } from '../structures/CLIBaseCommand';
-import { Builder, Parser } from '@repick/core';
-import { CodeLanguage, RepickError } from '@repick/common';
+import { Builder, Parser } from '@velkit/core';
+import { CodeLanguage, VelkitError } from '@velkit/common';
 import { getTemplateIfExistsOrThrow, getTemplates } from '../utils';
 import path from 'node:path';
 
@@ -51,7 +51,7 @@ export default class GUI extends CLIBaseCommand<typeof GUI> {
         await this.runActionTEMPLATE();
         break;
       default:
-        throw new RepickError('Action not supported yet', 'INVALID_ACTION');
+        throw new VelkitError('Action not supported yet', 'INVALID_ACTION');
     }
 
     return this.flags;
@@ -81,7 +81,7 @@ export default class GUI extends CLIBaseCommand<typeof GUI> {
     const builder = new Builder().setSource(answers.repository).setDestination(path.resolve(process.cwd(), answers.destination));
 
     ux.action.start('Cloning', 'Still in progress', { style: 'aesthetic' });
-    await repick.clone(builder);
+    await velkit.clone(builder);
     ux.action.stop();
   }
 
@@ -121,7 +121,7 @@ export default class GUI extends CLIBaseCommand<typeof GUI> {
     const builder = new Builder().useTemplate(template).setDestination(path.resolve(process.cwd(), answers.destination));
 
     ux.action.start('Cloning', 'Still in progress', { style: 'aesthetic' });
-    await repick.clone(builder);
+    await velkit.clone(builder);
     ux.action.stop();
   }
 }

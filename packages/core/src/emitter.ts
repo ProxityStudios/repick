@@ -1,5 +1,5 @@
 import { EventEmitter } from 'node:events';
-import { BuilderData } from '@repick/common';
+import { BuilderData } from '@velkit/common';
 
 export class Emitter extends EventEmitter {
   override on<K extends keyof EventMap>(event: K, listener: EventMap[K]): this {

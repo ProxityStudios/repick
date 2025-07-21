@@ -1,7 +1,7 @@
 import { Args, Command, Flags as OCFlags } from '@oclif/core';
-import { repick } from '../container';
+import { velkit } from '../container';
 import { Flags, CLIBaseCommand } from '../structures/CLIBaseCommand';
-import { Builder } from '@repick/core';
+import { Builder } from '@velkit/core';
 import path from 'node:path';
 
 export default class Clone extends CLIBaseCommand<typeof Clone> {
@@ -26,7 +26,7 @@ export default class Clone extends CLIBaseCommand<typeof Clone> {
     if (flags.proxy) builder.setProxy(flags.proxy);
 
     // ux.action.start('Cloning', 'Still in progress', { style: 'aesthetic' });
-    await repick.clone(builder);
+    await velkit.clone(builder);
     // ux.action.stop();
 
     return this.flags;

@@ -4,7 +4,7 @@ const https = require('node:https');
 const path = require('node:path');
 
 const TemplatesRepositoryURI =
-  'https://raw.githubusercontent.com/ProxityStudios/repick-templates/refs/heads/main/templates.json';
+  'https://raw.githubusercontent.com/ProxityStudios/velkit-templates/refs/heads/main/templates.json';
 
 // TODO: Code a download manager
 // FIXME: do not download cached file
@@ -12,7 +12,7 @@ async function download(url, saveTo) {
   return new Promise((resolve, reject) => {
     const options = {
       headers: {
-        'User-Agent': 'Repick/4.0.0',
+        'User-Agent': 'Velkit/4.0.0',
       },
     };
 

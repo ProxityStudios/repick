@@ -8,4 +8,4 @@
 
 ## Reporting a Vulnerability
 
-Open an issue in [here](https://github.com/ProxityStudios/repick/issues)
+Open an issue in [here](https://github.com/ProxityStudios/velkit/issues)

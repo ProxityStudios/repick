@@ -39,10 +39,10 @@ importers:
       '@oclif/plugin-warn-if-update-available':
         specifier: 3.1.44
         version: 3.1.44
-      '@repick/common':
+      '@velkit/common':
         specifier: workspace:*
         version: link:../common
-      '@repick/core':
+      '@velkit/core':
         specifier: workspace:*
         version: link:../core
       https-proxy-agent:
@@ -52,7 +52,7 @@ importers:
         specifier: 7.4.3
         version: 7.4.3
     devDependencies:
-      '@repick/typescript-config':
+      '@velkit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@types/node':
@@ -67,7 +67,7 @@ importers:
 
   packages/common:
     devDependencies:
-      '@repick/typescript-config':
+      '@velkit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       typescript:
@@ -76,7 +76,7 @@ importers:
 
   packages/core:
     dependencies:
-      '@repick/common':
+      '@velkit/common':
         specifier: workspace:*
         version: link:../common
       https-proxy-agent:
@@ -89,7 +89,7 @@ importers:
       '@jest/globals':
         specifier: ^30.0.4
         version: 30.0.4
-      '@repick/typescript-config':
+      '@velkit/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       jest:

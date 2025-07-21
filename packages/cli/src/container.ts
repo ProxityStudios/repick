@@ -1,3 +1,3 @@
-import Repick from '@repick/core';
+import Velkit from '@velkit/core';
 
-export const repick = new Repick();
+export const velkit = new Velkit();

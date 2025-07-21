@@ -1,5 +1,5 @@
 import { Args, Command, Flags as OCFlags } from "@oclif/core";
-import { repick } from "../../container";
+import { velkit } from "../../container";
 import {
   Flags,
   CLIBaseCommand,
@@ -19,7 +19,7 @@ export default class GlobalProxyClear extends CLIBaseCommand<
   public async run(): Promise<Flags<typeof GlobalProxyClear>> {
     const { args, flags } = await this.parse(GlobalProxyClear);
 
-    repick.clearGlobalProxy();
+    velkit.clearGlobalProxy();
     this.log("Global proxy cleared successfully.");
 
     return this.flags;

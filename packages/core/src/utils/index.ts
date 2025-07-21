@@ -6,7 +6,7 @@ import * as https from 'node:https';
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import { Builder } from '../structures/Builder';
-import { RepickError, type BuilderData } from '@repick/common';
+import { VelkitError, type BuilderData } from '@velkit/common';
 
 export async function checkDirectoryIsEmpty(dir: fs.PathLike): Promise<boolean> {
   try {
@@ -21,7 +21,7 @@ export async function checkDirectoryIsEmpty(dir: fs.PathLike): Promise<boolean> 
 export async function downloadFile(url: string, saveTo: string, proxy?: string): Promise<string> {
   const options: https.RequestOptions = {
     headers: {
-      'User-Agent': 'Repick/4.0.0',
+      'User-Agent': 'Velkit/4.0.0',
     },
   };
 
@@ -50,7 +50,7 @@ export async function downloadFile(url: string, saveTo: string, proxy?: string):
       if (proxy && [407, 502, 503, 504].includes(response.statusCode ?? 0)) {
         aborted = true;
         request.destroy();
-        reject(new RepickError(`Received status code ${response.statusCode}`, 'PROXY_ERROR'));
+        reject(new VelkitError(`Received status code ${response.statusCode}`, 'PROXY_ERROR'));
         return;
       }
 

@@ -4,11 +4,11 @@ import { Parser } from './utils/parser';
 import { Emitter } from './emitter';
 import { checkDirectoryIsEmpty, downloadFile, extractTarToDestination, getBuilderData, makeParentDirOrThrow } from './utils';
 import type { Builder } from './structures/Builder';
-import { RepickError, ProcessStatus, type CoreOptions, type Ref, type RefArray, type PlatformSource, type BuilderData } from '@repick/common';
+import { VelkitError, ProcessStatus, type CoreOptions, type Ref, type RefArray, type PlatformSource, type BuilderData } from '@velkit/common';
 import { ProxyConfigRAWDataPath } from './paths';
 
 // TODO: handle errors gracefully & implement own error system
-export class Repick {
+export class Velkit {
   public readonly events: Emitter;
 
   public verboseMode: boolean;
@@ -29,7 +29,7 @@ export class Repick {
       const isEmptyDir = await checkDirectoryIsEmpty(builderData.destination);
 
       if (!isEmptyDir && !builderData.force) {
-        throw new RepickError(
+        throw new VelkitError(
           'Destination isn\'t empty, aborting the process. (use "<FreshBuilder>.setForce(true)" or provide "--force" flag to bypass)',
           'DESTINATION_NOT_EMPTY'
         );
@@ -41,10 +41,10 @@ export class Repick {
           const result = await this.cloneUsingTar(builderData);
           return result;
         default:
-          throw new RepickError(`Mode "${builderData.mode}" not supported yet`, 'INVALID_MODE');
+          throw new VelkitError(`Mode "${builderData.mode}" not supported yet`, 'INVALID_MODE');
       }
     } catch (err) {
-      const error = err as RepickError;
+      const error = err as VelkitError;
       console.error(error.toString());
       process.exit(ProcessStatus.ERROR);
     }
@@ -64,7 +64,7 @@ export class Repick {
       url = `${parsedSrc.url}/get/${parsedSrc.ref}.tar.gz`;
     } else {
       const hash = await this.getCommitHash(parsedSrc);
-      if (!hash) throw new RepickError(`Could not find the commit hash for ${parsedSrc.ref}`, 'HASH_NOT_FOUND');
+      if (!hash) throw new VelkitError(`Could not find the commit hash for ${parsedSrc.ref}`, 'HASH_NOT_FOUND');
 
       subDirectory = parsedSrc.subDirectory ? `${parsedSrc.repoName}-${hash}${parsedSrc.subDirectory}` : undefined;
 
@@ -142,7 +142,7 @@ export class Repick {
 
       lsRemote.on('close', (code) => {
         if (code !== 0) {
-          reject(new RepickError(`git ls-remote failed with code ${code}: ${stderr}`, 'FETCH_ERROR'));
+          reject(new VelkitError(`git ls-remote failed with code ${code}: ${stderr}`, 'FETCH_ERROR'));
         } else {
           resolve(this.parseRefs(stdout));
         }
@@ -217,4 +217,4 @@ export class Repick {
   }
 }
 
-export default Repick;
+export default Velkit;

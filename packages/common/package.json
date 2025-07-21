@@ -1,5 +1,5 @@
 {
-  "name": "@repick/common",
+  "name": "@velkit/common",
   "version": "0.0.0",
   "description": "",
   "exports": "./dist/index.js",
@@ -22,7 +22,7 @@
   "license": "MIT",
   "devDependencies": {
     "typescript": "latest",
-  	"@repick/typescript-config": "workspace:*"
+  	"@velkit/typescript-config": "workspace:*"
   },
   "dependencies": {}
 }

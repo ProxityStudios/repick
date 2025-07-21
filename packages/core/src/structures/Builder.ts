@@ -1,4 +1,4 @@
-import { RepickError, type BuilderData, type BuildMode, type TemplateData } from '@repick/common';
+import { VelkitError, type BuilderData, type BuildMode, type TemplateData } from '@velkit/common';
 import path from 'node:path';
 
 export class Builder {
@@ -39,7 +39,7 @@ export class Builder {
 
   public setDestination(destination: string) {
     if (!path.isAbsolute(destination)) {
-      throw new RepickError(
+      throw new VelkitError(
         'Destination path must be absolute. Use path.resolve() to set it.',
         'DESTINATION_NOT_ABSOLUTE'
       );
@@ -57,7 +57,7 @@ export class Builder {
 
   public toJSON(): BuilderData {
     if (!this.source || !this.destination)
-      throw new RepickError('Source or destination not set', 'MISSING_SOURCE_OR_DESTINATION');
+      throw new VelkitError('Source or destination not set', 'MISSING_SOURCE_OR_DESTINATION');
 
     return {
       mode: this.mode,

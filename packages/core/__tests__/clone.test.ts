@@ -1,12 +1,12 @@
 import { describe, expect, test, beforeEach, it } from '@jest/globals';
 
-import {Repick, Builder } from '../src';
+import {Velkit, Builder } from '../src';
 import path from 'path';
 
 describe('clone a repository from the sources', () => {
-  let instance: Repick;
+  let instance: Velkit;
   beforeEach(() => {
-    instance = new Repick();
+    instance = new Velkit();
   });
 
   it('clone a repository from Github', async () => {

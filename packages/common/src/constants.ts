@@ -1,6 +1,6 @@
 import type { SupportedPlatformsType } from './types';
 
-export const TemplatesRepositoryURI = 'https://github.com/ProxityStudios/repick-templates';
+export const TemplatesRepositoryURI = 'https://github.com/ProxityStudios/velkit-templates';
 
 export const SupportedModes = new Set(['tar'] as const); // "git"
 export const SupportedPlatforms: SupportedPlatformsType = {

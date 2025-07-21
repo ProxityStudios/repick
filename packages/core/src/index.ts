@@ -1,8 +1,8 @@
-import Repick from "./repick"
+import Velkit from "./velkit"
 
-export * from "./repick"
+export * from "./velkit"
 export * from "./structures"
 export * from "./utils"
 export * from "./utils/parser"
 
-export default Repick;
+export default Velkit;

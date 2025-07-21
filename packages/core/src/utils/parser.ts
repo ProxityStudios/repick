@@ -1,10 +1,10 @@
-import { RepickError, type PlatformSource, SupportedPlatforms } from '@repick/common';
+import { VelkitError, type PlatformSource, SupportedPlatforms } from '@velkit/common';
 
 export class Parser {
   // FIXME: when users use git.sr.ht, the url going to be git.sr.ht.
   static parseSourceOrThrow(repo: string): PlatformSource {
     if (repo.length > 1000) {
-      throw new RepickError('Input too long', 'INPUT_TOO_LONG');
+      throw new VelkitError('Input too long', 'INPUT_TOO_LONG');
     }
 
     const match =
@@ -13,13 +13,13 @@ export class Parser {
       );
 
     if (!match) {
-      throw new RepickError(`Unable to parse source "${repo}"`, 'PARSE_ERROR');
+      throw new VelkitError(`Unable to parse source "${repo}"`, 'PARSE_ERROR');
     }
 
     const site = (match[1] || match[2] || match[3] || 'github').replace(/\.(com|org)$/, '');
 
     if (!SupportedPlatforms.hasOwnProperty(site)) {
-      throw new RepickError('Platform not supported', 'PLATFORM_NOT_SUPPORTED');
+      throw new VelkitError('Platform not supported', 'PLATFORM_NOT_SUPPORTED');
     }
 
     const userName = match[4]!;
