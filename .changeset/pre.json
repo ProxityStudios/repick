@@ -1,0 +1,12 @@
+{
+  "mode": "exit",
+  "tag": "next",
+  "initialVersions": {
+    "repick": "0.0.0",
+    "@repick/common": "0.0.0",
+    "@repick/core": "0.0.0",
+    "@repick/eslint-config": "0.0.0",
+    "@repick/typescript-config": "0.0.0"
+  },
+  "changesets": []
+}
