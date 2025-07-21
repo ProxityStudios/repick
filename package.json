@@ -1,6 +1,6 @@
 {
   "name": "repick",
-  "private": false,
+  "private": true,
   "scripts": {
     "build": "turbo run build",
     "release": "pnpm run build && changeset publish",
